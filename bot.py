@@ -18,6 +18,7 @@ class PublicListener(StreamListener):
     def __init__(self, api):
         self.api = api
         self.me = api.account_verify_credentials()
+        logger.info(f'I am {self.me["acct"]}')
         self.refresh_following()
 
     def on_update(self, status):
