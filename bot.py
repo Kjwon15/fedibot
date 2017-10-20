@@ -24,9 +24,20 @@ class PublicListener(StreamListener):
         account = status['account']
         acct = account['acct']
 
-        if acct not in self.followings and not self.is_local_account(acct):
-            logger.info(f'New account: {acct}')
-            self.api.account_follow(account['id'])
+        if acct in self.followings:
+            logger.debug(f'Already following {acct}')
+            return
+
+        if self.is_local_account(acct):
+            logger.debug(f'{acct} is local account, skipping')
+            return
+
+        if account['locked']:
+            logger.debug(f'{acct} is locked account, skipping')
+
+        logger.info(f'New account: {acct}')
+        self.api.account_follow(account['id'])
+        self.refresh_following()
 
     def on_notification(self, notification):
         pprint(notification)
