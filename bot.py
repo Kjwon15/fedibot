@@ -58,7 +58,7 @@ class PublicListener(StreamListener):
             for account in self.api.account_following(self.me['id'])
         }
 
-        logger.info(f'Currently following {len(self.followings)} users')
+        logger.debug(f'Currently following {len(self.followings)} users')
 
 
 def main():
@@ -93,7 +93,7 @@ if __name__ == '__main__':
         'loggers': {
             'fedibot': {
                 'handlers': ['console'],
-                'level': 'DEBUG',
+                'level': 'INFO',
                 'propagate': False,
             },
         },
