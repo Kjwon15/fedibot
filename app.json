@@ -1,0 +1,36 @@
+{
+  "name": "Fedibot",
+  "description": "Following bot for mastodon fediverse",
+  "keywords": [
+      "mastodon",
+      "fediverse",
+      "bot"
+  ],
+  "website": "https://qdon.space/@fedibot",
+  "repository": "https://github.com/kjwon15/fedibot",
+  "env": {
+    "API_BASE_URL": {
+      "description": "API base URL for Mastodon instance"
+    },
+    "CLIENT_ID": {
+      "description": "Client id for OAuth2"
+    },
+    "CLIENT_SECRET": {
+      "description": "Client secret key for OAuth 2"
+    },
+    "ACCESS_TOKEN": {
+      "description": "User's access token to login"
+    }
+  },
+  "formation": {
+    "bot": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    }
+  ]
+}

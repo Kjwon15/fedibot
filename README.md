@@ -3,6 +3,8 @@ Fedibot
 
 Following bot for mastodon fediverse.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kjwon15/fedibot)
+
 
 Usage
 -----
