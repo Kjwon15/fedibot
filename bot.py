@@ -34,6 +34,7 @@ class PublicListener(StreamListener):
 
         if account['locked']:
             logger.debug(f'{acct} is locked account, skipping')
+            return
 
         logger.info(f'New account: {acct}')
         self.api.account_follow(account['id'])
