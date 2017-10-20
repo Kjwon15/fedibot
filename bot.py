@@ -46,7 +46,6 @@ class PublicListener(StreamListener):
 
     def handle_heartbeat(self):
         logger.debug('Handling heartbeat')
-        self.refresh_following()
 
     @staticmethod
     def is_local_account(acct):
